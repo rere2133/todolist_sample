@@ -72,7 +72,7 @@ const requestListener = (req, res) => {
         console.log(req.url.split('/'));
         let id = req.url.split('/').pop()
         let idx = todos.findIndex(el => el.id == id)
-        todos = todos.splice(idx, 1)
+        todos.splice(idx, 1)
         console.log(todos);
         res.writeHead(200, headers)
         res.write(JSON.stringify({
